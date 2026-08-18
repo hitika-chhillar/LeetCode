@@ -1,21 +1,18 @@
-// Last updated: 8/11/2026, 9:02:56 PM
+// Last updated: 8/18/2026, 7:40:04 PM
 class Solution {
     public int maxSubArray(int[] nums) {
-
-        int currsum = 0;
-        int maxsum = Integer.MIN_VALUE;
-
-        for( int i=0; i<nums.length; i++){
-
-            currsum += nums[i];
         
-            maxsum = Math.max(currsum, maxsum);
+        int bestending = nums[0];
+        int ans = nums[0];
 
-            if(currsum < 0 ){
-                currsum = 0;
-            }
+        for(int i=1; i<nums.length; i++){
+
+            int v1 = bestending + nums[i];
+            int v2 = nums[i];
+
+            bestending = Math.max(v1, v2);
+            ans = Math.max(ans, bestending);
         }
-        return maxsum;
-        
+        return ans;
     }
 }
