@@ -1,4 +1,4 @@
-// Last updated: 8/25/2026, 11:53:10 PM
+// Last updated: 8/25/2026, 11:53:41 PM
 class Solution {
     public int[][] merge(int[][] intervals) {
 
